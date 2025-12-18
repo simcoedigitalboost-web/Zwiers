@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zwiers Electric | Orillia Electrical Installation Services</title>
+    <meta name="description" content="Commercial, residential, and underground electrical installation services in Orillia and Simcoe County. Panel upgrades, new construction, generators, and utility work.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal: #1a1a1a;
+            --slate: #2d2d2d;
+            --concrete: #404040;
+            --steel: #6b6b6b;
+            --silver: #9a9a9a;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --electric: #ffd000;
+            --electric-dim: #b89500;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--charcoal);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--slate);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--electric);
+        }
+
+        .header-cta {
+            background: var(--electric);
+            color: var(--charcoal);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .header-cta:hover {
+            background: var(--white);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/commercial-panel.jpg') center center / cover no-repeat;
+            opacity: 0.3;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26,26,26,0.9) 0%, rgba(26,26,26,0.7) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: var(--electric);
+            color: var(--charcoal);
+            padding: 6px 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--electric);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--silver);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--electric);
+            color: var(--charcoal);
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Services */
+        .services {
+            padding: 120px 0;
+            background: var(--slate);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--silver);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--charcoal);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-img {
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 32px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .service-content p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        /* About */
+        .about {
+            padding: 120px 0;
+            background: var(--charcoal);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            display: block;
+        }
+
+        .about-img::after {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            right: -24px;
+            bottom: -24px;
+            border: 3px solid var(--electric);
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .about-content p {
+            color: var(--silver);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .credentials {
+            display: flex;
+            gap: 32px;
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--concrete);
+        }
+
+        .credential {
+            text-align: center;
+        }
+
+        .credential-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--electric);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+        }
+
+        .credential-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--charcoal);
+        }
+
+        .credential span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        /* Team */
+        .team {
+            padding: 120px 0;
+            background: var(--slate);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .team-img {
+            overflow: hidden;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: all 0.4s ease;
+        }
+
+        .team-img:hover img {
+            filter: grayscale(0%);
+        }
+
+        .team-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .team-content h2 {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .team-content p {
+            color: var(--silver);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 120px 0;
+            background: var(--electric);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--charcoal);
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: var(--concrete);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn-primary {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        .cta-btn-primary:hover {
+            background: var(--slate);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border: 2px solid var(--charcoal);
+        }
+
+        .cta-btn-secondary:hover {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            background: var(--charcoal);
+            border-top: 1px solid var(--slate);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .footer-logo span {
+            color: var(--electric);
+        }
+
+        .footer-info {
+            color: var(--steel);
+            font-size: 0.9rem;
+        }
+
+        .footer-info a {
+            color: var(--silver);
+            text-decoration: none;
+        }
+
+        .footer-info a:hover {
+            color: var(--electric);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .about-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-img::after {
+                display: none;
+            }
+
+            .team-content {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credentials {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .header-cta {
+                display: none;
+            }
+
+            .team-img img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">ZWIERS<span>.</span></a>
+            <a href="#contact" class="header-cta">Get a Quote</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">Orillia &amp; Simcoe County</div>
+                <h1>Electrical Installation <span>Done Right</span></h1>
+                <p>Commercial, residential, and underground electrical services. From new construction to panel upgrades, we deliver quality work that passes inspection the first time.</p>
+                <a href="#contact" class="hero-cta">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <p>Full-service electrical installation for projects of any size</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/temp-power.jpg" alt="Temporary power installation for new construction">
+                    </div>
+                    <div class="service-content">
+                        <h3>New Construction</h3>
+                        <p>Complete electrical installation for new builds. Temporary power, permanent service, and everything in between. We work with builders and homeowners to get your project powered up on schedule.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/panel-upgrade.jpg" alt="Electrical panel upgrade with generator transfer">
+                    </div>
+                    <div class="service-content">
+                        <h3>Panel Upgrades &amp; Backup Power</h3>
+                        <p>Upgrading from an outdated panel or adding generator transfer capability? We install modern electrical panels and backup power systems to keep your home or business running when it matters.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="images/handhole.jpg" alt="Underground electrical installation">
+                    </div>
+                    <div class="service-content">
+                        <h3>Underground Electrical</h3>
+                        <p>Trenching, conduit runs, utility connections, and handholes. We handle the underground work that most electricians won't touch. Proper installation now means no problems later.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img">
+                    <img src="images/wire-warehouse.jpg" alt="Zwiers Electric equipment and inventory">
+                </div>
+                <div class="about-content">
+                    <h2>Built for the Big Jobs</h2>
+                    <p>Zwiers Electric isn't a one-man operation. We're a fully equipped electrical contractor with the inventory, equipment, and crew to handle projects of any size.</p>
+                    <p>From commercial panel installations to underground utility work in the worst conditions Ontario can throw at us, we show up and get it done.</p>
+                    <div class="credentials">
+                        <div class="credential">
+                            <div class="credential-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                            </div>
+                            <span>Licensed</span>
+                        </div>
+                        <div class="credential">
+                            <div class="credential-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <span>Insured</span>
+                        </div>
+                        <div class="credential">
+                            <div class="credential-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <span>ESA Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-content">
+                    <h2>We Do the Hard Work</h2>
+                    <p>Underground electrical isn't glamorous. It's frozen ground, muddy trenches, and conditions that send other contractors home.</p>
+                    <p>Our crew shows up regardless. Quality underground installation now prevents expensive problems for decades to come.</p>
+                </div>
+                <div class="team-img">
+                    <img src="images/trenching.jpg" alt="Zwiers Electric crew working in winter conditions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Get in touch for a free estimate</p>
+            <div class="cta-buttons">
+                <a href="tel:+17053317702" class="cta-btn cta-btn-primary">Call (705) 331-7702</a>
+                <a href="mailto:daniel@zwierselectric.ca" class="cta-btn cta-btn-secondary">Send a Message</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">ZWIERS<span>.</span></div>
+                <div class="footer-info">
+                    Serving Orillia &amp; Simcoe County
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
